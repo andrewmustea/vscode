@@ -16,10 +16,15 @@ export default class Messages {
 	public static PROBLEMS_PANEL_CONFIGURATION_TITLE: string = nls.localize('problems.panel.configuration.title', "Problems View");
 	public static PROBLEMS_PANEL_CONFIGURATION_AUTO_REVEAL: string = nls.localize('problems.panel.configuration.autoreveal', "Controls whether Problems view should automatically reveal files when opening them.");
 	public static PROBLEMS_PANEL_CONFIGURATION_VIEW_MODE: string = nls.localize('problems.panel.configuration.viewMode', "Controls the default view mode of the Problems view.");
-	public static PROBLEMS_PANEL_CONFIGURATION_SHOW_CURRENT_STATUS: string = nls.localize('problems.panel.configuration.showCurrentInStatus', "When enabled shows the current problem in the status bar.");
+	public static PROBLEMS_PANEL_CONFIGURATION_SHOW_CURRENT_STATUS: string = nls.localize('problems.panel.configuration.showCurrentInStatus', "When enabled, shows the current problem in the status bar.");
 	public static PROBLEMS_PANEL_CONFIGURATION_COMPARE_ORDER: string = nls.localize('problems.panel.configuration.compareOrder', "Controls the order in which problems are navigated.");
 	public static PROBLEMS_PANEL_CONFIGURATION_COMPARE_ORDER_SEVERITY: string = nls.localize('problems.panel.configuration.compareOrder.severity', "Navigate problems ordered by severity");
 	public static PROBLEMS_PANEL_CONFIGURATION_COMPARE_ORDER_POSITION: string = nls.localize('problems.panel.configuration.compareOrder.position', "Navigate problems ordered by position");
+	public static PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT: string = nls.localize('problems.panel.configuration.filterTitleCount', "Minimum severity of the problems counted by the Problems panel title.");
+	public static PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_ERRORS: string = nls.localize('problems.panel.configuration.filterTitleCountErrors', "Only count Errors in the Problems panel title.");
+	public static PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_WARNINGS: string = nls.localize('problems.panel.configuration.filterTitleCountWarnings', "Count Warnings and Errors in the Problems panel title.");
+	public static PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_INFOS: string = nls.localize('problems.panel.configuration.filterTitleCountInfos', "Count Infos, Warnings, and Errors in the Problems panel title.");
+	public static PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_HINTS: string = nls.localize('problems.panel.configuration.filterTitleCountHints', "Count Hints, Infos, Warnings, and Errors in the Problems panel title.");
 
 	public static MARKERS_PANEL_TITLE_PROBLEMS: string = nls.localize('markers.panel.title.problems', "Problems");
 

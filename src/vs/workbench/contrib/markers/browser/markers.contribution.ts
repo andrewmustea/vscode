@@ -33,6 +33,7 @@ import { registerIcon } from 'vs/platform/theme/common/iconRegistry';
 import { ViewAction } from 'vs/workbench/browser/parts/views/viewPane';
 import { IActivityService, NumberBadge } from 'vs/workbench/services/activity/common/activity';
 import { viewFilterSubmenu } from 'vs/workbench/browser/parts/views/viewFilter';
+import { MarkerSeverity } from 'vs/platform/markers/common/markers';
 
 KeybindingsRegistry.registerCommandAndKeybindingRule({
 	id: Markers.MARKER_OPEN_ACTION_ID,
@@ -120,6 +121,18 @@ Registry.as<IConfigurationRegistry>(Extensions.Configuration).registerConfigurat
 				Messages.PROBLEMS_PANEL_CONFIGURATION_COMPARE_ORDER_POSITION,
 			],
 		},
+		'problems.filterTitleCount': {
+			'description': Messages.PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT,
+			'type': 'string',
+			'default': 'infos',
+			'enum': ['errors', 'warnings', 'infos', 'hints'],
+			'enumDescriptions': [
+				Messages.PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_ERRORS,
+				Messages.PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_WARNINGS,
+				Messages.PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_INFOS,
+				Messages.PROBLEMS_PANEL_CONFIGURATION_FILTER_TITLE_COUNT_HINTS,
+			]
+		}
 	}
 });
 
@@ -631,7 +644,8 @@ class ActivityUpdater extends Disposable implements IWorkbenchContribution {
 
 	constructor(
 		@IActivityService private readonly activityService: IActivityService,
-		@IMarkerService private readonly markerService: IMarkerService
+		@IMarkerService private readonly markerService: IMarkerService,
+		countSeverities: MarkerSeverity
 	) {
 		super();
 		this._register(this.markerService.onMarkerChanged(() => this.updateBadge()));
@@ -640,7 +654,10 @@ class ActivityUpdater extends Disposable implements IWorkbenchContribution {
 
 	private updateBadge(): void {
 		const { errors, warnings, infos } = this.markerService.getStatistics();
-		const total = errors + warnings + infos;
+		if (countSeverities = MarkerSeverity.Error) {
+			const total = errors + warnings + infos;
+		}
+		if (countSeverities = MarkerSeverity.Error) {
 		const message = localize('totalProblems', 'Total {0} Problems', total);
 		this.activity.value = this.activityService.showViewActivity(Markers.MARKERS_VIEW_ID, { badge: new NumberBadge(total, () => message) });
 	}
